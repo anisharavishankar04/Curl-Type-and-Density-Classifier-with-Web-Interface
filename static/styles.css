@@ -1,0 +1,191 @@
+/* Base styling */
+body {
+  font-family: 'Coming Soon', cursive;
+  background-color: #cc8899; /* Baby pink */
+  color: #faebd7;
+  padding: 2rem;
+  text-align: center;
+  font-size: 25px;
+}
+
+/* Main container */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 15px;
+  background-color: transparent; /* No visible box background */
+  box-shadow: none;
+}
+
+/* Headings */
+h1 {
+  color: #722f37;
+  margin-bottom: 1rem;
+  font-family: 'Homemade Apple', cursive;
+  font-size: 50px;
+  font-weight: 1000; 
+}
+
+h2 {
+  color: #722f37;
+  margin-bottom: 1rem;
+  font-family: 'Homemade Apple', cursive;
+  font-size: 50px;
+  font-weight: 1000; 
+}
+
+/* Form layout */
+form {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+/* File input & radio buttons */
+
+input[type="radio"] {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Submit button */
+button {
+  padding: 12px 24px;
+  background-color: #faebd7;
+  color: #722f37;
+  font-size: 20px;
+  font-family: 'Coming Soon', cursive;
+  border: 2px solid #722f37;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #722f37;
+  color: #faebd7;
+  transform: scale(1.05);
+}
+
+/* Result section */
+.result {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ccc;
+}
+
+img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.step-title {
+  font-size: 30px;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Hide the actual input */
+input[type="file"] {
+  display: none;
+}
+
+/* Style the custom label */
+.custom-file-upload {
+  padding: 12px 24px;
+  background-color: #faebd7;
+  color: #722f37;
+  font-size: 20px;
+  font-family: 'Coming Soon', cursive;
+  border: 2px solid #722f37;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.custom-file-upload:hover {
+  background-color: #722f37;
+  color: #faebd7;
+  transform: scale(1.05);
+}
+
+
+.file-input-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-message {
+  color: #fff8f0;
+  background-color: #a03333;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  display: none;
+}
+
+.classify-btn {
+  padding: 12px 24px;
+  background-color: #faebd7;
+  color: #722f37;
+  font-size: 20px;
+  font-family: 'Coming Soon', cursive;
+  border: 2px solid #722f37;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.classify-btn:hover {
+  background-color: #722f37;
+  color: #faebd7;
+  transform: scale(1.05);
+}
+
+.heart-radio {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.heart-radio input[type="radio"] {
+  display: none;
+}
+
+.heart-radio label {
+  position: relative;
+  font-family: 'Coming Soon', cursive;
+  font-size: 24px;
+  color: #722f37;
+  cursor: pointer;
+  padding-left: 2rem;
+  transition: transform 0.2s ease;
+}
+
+.heart-radio label::before {
+  content: "♡";
+  position: absolute;
+  left: 0;
+  font-size: 28px;
+  transition: color 0.2s ease;
+}
+
+.heart-radio input[type="radio"]:checked + label::before {
+  content: "♥";
+  color: #722f37;
+}
+
+.heart-radio label::after {
+  content: attr(data-label);
+  margin-left: 0.5rem;
+}
+
+.heart-radio label:hover {
+  transform: scale(1.1);
+}

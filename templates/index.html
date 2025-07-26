@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Curl Type Classifier</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Curl Type and Density Classifier</h1><br>
+
+    <form id="hair-form" method="POST" enctype="multipart/form-data">
+      <p><span class="step-title">STEP-1:</span></p>
+      <p>Upload an image of your hair. Make sure that it is taken in natural light and ensure that the image is clear. For best results, do this after you wash your hair and scrunch it lightly towards the roots. Crop the image to focus on your hair. </p>
+
+      <div class="file-input-wrapper">
+        <label for="image-upload" class="custom-file-upload">Choose Image</label>
+        <input id="image-upload" type="file" name="image" required>
+        <p id="error-message" class="error-message"></p>
+      </div>
+
+      <br><p><span class="step-title">STEP-2:</span></p>
+      <p>Take the following hair density quiz:</p>
+
+      <p>1. Can you see your scalp easily?</p>
+      <div class="heart-radio">
+        <input type="radio" id="q1-no" name="q1" value="0" required>
+        <label for="q1-no" data-label="No"></label>
+        <input type="radio" id="q1-yes" name="q1" value="1">
+        <label for="q1-yes" data-label="Yes"></label>
+      </div>
+
+      <p>2. Does your hair feel naturally voluminous?</p>
+      <div class="heart-radio">
+        <input type="radio" id="q2-no" name="q2" value="0" required>
+        <label for="q2-no" data-label="No"></label>
+        <input type="radio" id="q2-yes" name="q2" value="1">
+        <label for="q2-yes" data-label="Yes"></label>
+      </div>
+
+      <p>3. Does it feel thick even without product?</p>
+      <div class="heart-radio">
+        <input type="radio" id="q3-no" name="q3" value="0" required>
+        <label for="q3-no" data-label="No"></label>
+        <input type="radio" id="q3-yes" name="q3" value="1">
+        <label for="q3-yes" data-label="Yes"></label>
+      </div>
+
+      <br><br>
+      <button type="submit" class="classify-btn">Classify</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+      <h2>Results</h2>
+      <img src="{{ url_for('static', filename='uploads/' + image_file) }}" alt="Uploaded Image">
+      <p><strong>Curl Type:</strong> {{ curl }}</p>
+      <p><strong>Density:</strong> {{ density }}</p>
+      <p><strong>Routine Suggestion:</strong> {{ advice }}</p>
+    </div>
+    {% endif %}
+  </div>
+
+  <script>
+    const form = document.getElementById('hair-form');
+    const fileInput = document.getElementById('image-upload');
+    const errorMsg = document.getElementById('error-message');
+
+    fileInput.addEventListener('change', () => {
+      errorMsg.style.display = 'none';
+    });
+
+    form.addEventListener('submit', function (e) {
+      if (!fileInput.value) {
+        e.preventDefault();
+        errorMsg.textContent = 'Choose an image first pookie 😭';
+        errorMsg.style.display = 'block';
+      } else {
+        errorMsg.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

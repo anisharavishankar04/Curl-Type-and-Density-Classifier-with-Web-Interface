@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Hair Results</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Your Hair Results</h1>
+    <p><strong>Curl Type:</strong> {{ curl }}</p>
+    <p><strong>Density:</strong> {{ density }}</p>
+    <div class="result">
+      <h2>Your Suggested Routine</h2>
+      <p>{{ advice|safe }}</p>
+    </div>
+    <br>
+    <a href="{{ url_for('index') }}">
+      <button>Classify Another Image</button>
+    </a>
+  </div>
+</body>
+</html>
