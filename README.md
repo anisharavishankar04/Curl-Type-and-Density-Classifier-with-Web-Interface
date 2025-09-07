@@ -1,4 +1,4 @@
-# Curl Type-and Density Classifier with Web Interface
+# Curl Type and Density Classifier with Web Interface
 
 This project builds a deep learning model to classify **wavy** and **curly** hair images into the following categories:
 
