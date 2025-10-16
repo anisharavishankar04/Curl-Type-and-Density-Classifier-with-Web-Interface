@@ -36,7 +36,7 @@ You **do not need to install anything locally**. This project is designed to run
 
 ---
 
-## Usage Instructions
+## Usage Instructions (For the Curl-Type Classifier Only)
 
 1. **Clone the Repository**  
    ```bash
